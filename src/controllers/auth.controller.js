@@ -2,6 +2,7 @@ const userModel = require("../models/user.model");
 const foodPartnerModel = require("../models/foodpartner.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { path } = require("../app");
 
 async function registerUser(req, res) {
   const { name, email, password } = req.body;
@@ -33,6 +34,7 @@ async function registerUser(req, res) {
     httpOnly: true,
     secure: true,
     sameSite: "None",
+    path: "/"
   });
 
   res.status(201).json({
@@ -75,6 +77,7 @@ async function loginUser(req, res) {
     httpOnly: true,
     secure: true,
     sameSite: "None",
+    path: "/"
   });
 
   res.status(200).json({
@@ -127,6 +130,7 @@ async function registerFoodPartner(req, res) {
     httpOnly: true,
     secure: true,
     sameSite: "None",
+    path: "/"
   });
 
   res.status(201).json({
