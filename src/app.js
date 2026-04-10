@@ -9,7 +9,7 @@ const cors = require('cors')
 const app = express();
 
 app.use(cors({
-    origin: "https://food-reel-frontend-theta.vercel.app/",
+    origin: "https://food-reel-frontend-theta.vercel.app",
     credentials: true
 }))
 app.use(express.json());
